@@ -1,0 +1,23 @@
+function convertToRoman(num) {
+  var romans = [["I","II","III","IV","V","VI","VII","VIII","IX"],["X","XX","XXX","XL","L","LX","LXX","LXXX","XC"],["C","CC","CCC","CD","D","DC","DCC","DCCC","CM"], ["M","MM","MMM","MMMM","MMMMM","MMMMMM","MMMMMMM","MMMMMMMM","MMMMMMMMM"]] ;
+  // break it down into units (arr1), tens (arr2), and everything higher (arr3)
+  var values = num.toString().split('');
+
+  var out = '';
+  for (var i = 0;i < values.length; i++) {
+    if (values[i]!=="0") {
+      if (values.length-1-i===0) {
+        out += romans[0][values[i]-1];
+      } else if (values.length-1-i===1) {
+        out += romans[1][values[i]-1];
+      } else if (values.length-1-i===2) {
+        out += romans[2][values[i]-1];
+      } else {
+        out += romans[3][values[i]-1];
+      }
+    }
+  }
+  return out;
+}
+
+convertToRoman(3999);
