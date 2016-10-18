@@ -1,0 +1,22 @@
+function whatIsInAName(collection, source) {
+  // What's in a name?
+  var arr = [];
+
+  // Only change code below this line
+  for (var keyc in collection) {
+    if (collection.hasOwnProperty(keyc)) {
+      for (var keys in source) {
+        if (source.hasOwnProperty(keys)) {
+            if (collection[keyc][keys] == source[keys])
+            arr.push(collection[keyc]);
+          }
+      }
+    }
+  }
+  
+  // Only change code above this line
+  return arr;
+}
+
+//whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2 });
+whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2, "c": 2  });
