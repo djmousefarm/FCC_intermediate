@@ -3,20 +3,13 @@ function whatIsInAName(collection, source) {
   var arr = [];
 
   // Only change code below this line
-  for (var keyc in collection) {
-    if (collection.hasOwnProperty(keyc)) {
-      for (var keys in source) {
-        if (source.hasOwnProperty(keys)) {
-            if (collection[keyc][keys] == source[keys])
-            arr.push(collection[keyc]);
-          }
-      }
-    }
-  }
+  var k = Object.keys(source);
+  
+  arr = collection.filter(function())
   
   // Only change code above this line
   return arr;
 }
 
-//whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2 });
-whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2, "c": 2  });
+whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2 });
+//whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
