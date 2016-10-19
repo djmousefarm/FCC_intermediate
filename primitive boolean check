@@ -5,7 +5,7 @@ function booWho(bool) {
   } else {
     return false;
  }
-  //return (typeof bool==='boolean' : true ? false);
+  //return (typeof bool==='boolean' ? true : false);
 }
 
 booWho(null);
