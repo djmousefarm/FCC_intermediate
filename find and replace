@@ -1,0 +1,13 @@
+function myReplace(str, before, after) {
+  function caser(wordA,wordB) {
+    if (wordA.substring(0,1).toUpperCase()===wordA.substring(0,1)) {
+      return wordB.substring(0,1).toUpperCase() + wordB.substring(1);
+    } else {
+      return wordB;
+    }
+  }
+  str = str.replace(before,caser(before,after));
+  return str;
+}
+
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
