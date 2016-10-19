@@ -1,11 +1,14 @@
 function myReplace(str, before, after) {
+  // a simple function for comparing the two words and seeing if they both start with the same casing
   function caser(wordA,wordB) {
     if (wordA.substring(0,1).toUpperCase()===wordA.substring(0,1)) {
+      // if wordA is uppercase then make sure it gets exported as such!!
       return wordB.substring(0,1).toUpperCase() + wordB.substring(1);
     } else {
       return wordB;
     }
   }
+  // replace the values in the string with the appropriately cased vallue
   str = str.replace(before,caser(before,after));
   return str;
 }
