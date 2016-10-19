@@ -1,11 +1,12 @@
 function booWho(bool) {
-  // What is the new fad diet for ghost developers? The Boolean.
+  // A check to see if the value is boolean or not using typeof
   if (typeof bool === 'boolean') {
     return true;
   } else {
     return false;
  }
-  //return (typeof bool==='boolean' ? true : false);
+ // commented out ternary version, that does work!!
+ //return (typeof bool==='boolean' ? true : false);
 }
 
 booWho(null);
