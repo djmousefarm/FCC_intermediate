@@ -5,6 +5,8 @@ function convertToRoman(num) {
 
   var out = '';
   for (var i = 0;i < values.length; i++) {
+  // this is a bit brute force but this just counts through the values and creates a string of the roman replacements
+  
     if (values[i]!=="0") {
       if (values.length-1-i===0) {
         out += romans[0][values[i]-1];
