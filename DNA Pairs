@@ -1,0 +1,19 @@
+function pairElement(str) {
+  var arr = str.split('');
+  var out = [];
+  arr.forEach(function(e){
+    switch(e) {
+      case 'A' : out.push(["A","T"]);
+                 break;
+      case 'T' : out.push(["T","A"]);
+                 break;
+      case 'C' : out.push(["C","G"]);
+                 break;
+      case 'G' : out.push(["G","C"]);
+                 break;
+    }
+  });
+  return out;
+}
+
+pairElement("GCG");
