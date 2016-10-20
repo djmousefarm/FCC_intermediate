@@ -1,8 +1,10 @@
 function pairElement(str) {
   var arr = str.split('');
   var out = [];
-  arr.forEach(function(e){
-    switch(e) {
+  // make two arrays : one contains the supplied string as an array (is this unnecessary?), the other is for output
+  
+  arr.forEach(function(e){  // go through the values in the supplied array and check each one
+    switch(e) { // push the appropriate value pair into the output array
       case 'A' : out.push(["A","T"]);
                  break;
       case 'T' : out.push(["T","A"]);
