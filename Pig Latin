@@ -6,12 +6,8 @@ function translatePigLatin(str) {
     }  // function that counts through the characters in the supplied string and returns the position of the first vowel encountered
   }
   var v = findFirstVowel(str);  // creating a variable containing the position of the first vowel encountered (to prevent repeatedly calls of the function)
-  if (v===0) {  // if it starts with a vowel just tack "way" on the end
-        str += "way";
-      } else {
-        str = str.substring(v,str.length) + str.substring(0,v) + 'ay';
-      }   // otherwise use substring to break the supplied string down based on the position of the first vowel (v)
-  return str;
+  return (v===0 ? str+="way" : str.substring(v,str.length) + str.substring(0,v) + 'ay');
+ 
 }
 
 translatePigLatin("consonant");
