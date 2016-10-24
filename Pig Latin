@@ -1,13 +1,11 @@
 function translatePigLatin(str) {
-  var vowels = "aeiou";  // string to check for vowels  
-  function findFirstVowel(str) {
-    for (var i = 0; i < str.length; i++) {
-      if (vowels.includes(str.substring(i,i+1))) return i;
-    }  // function that counts through the characters in the supplied string and returns the position of the first vowel encountered
-  }
-  var v = findFirstVowel(str);  // creating a variable containing the position of the first vowel encountered (to prevent repeatedly calls of the function)
-  return (v===0 ? str+="way" : str.substring(v,str.length) + str.substring(0,v) + 'ay');
- 
+  var v = 0;
+  var vowels = ["a","e","i","o","u"];  // string to check for vowels  
+  while (vowels.indexOf(str.substring(v,v+1))==-1) {
+    v++;  // find the position of the first vowel
+  } 
+  return (v===0 ? str+="way" : str.substring(v,str.length) + str.substring(0,v) + 'ay');  
+  // decide whether to append "way" (i.e. starts with vowel) or move part of the start of the string to the end and append "ay"
 }
 
-translatePigLatin("consonant");
+translatePigLatin("glove");
