@@ -1,14 +1,16 @@
 
 function uniteUnique(arr) {
-  var args = Array.from(arguments);
-  var a = [];
-  args.forEach(function(element) {
-   a = a.concat(element);
+  var args = Array.from(arguments);  // create an array from the "array like object" 'Arguments'
+                                     // this makes the arguments much easier to handle
+  var a = [];                        // placeholder array (is this necessary?)
+  args.forEach(function(element) {   // merge all supplied arrays together.  Goes through all elements of the argument array
+   a = a.concat(element);            // and concatenates them all together
   });
-  return a;
-  //  .reduce(function(pre,cur,i){
-  //  if ()
-  //});
+  
+  arr = a.filter(function(elem,index,array){  // this is a simple filter
+    return array.indexOf(elem) === index;     // compares the index of each element with the actual index within the array
+  });                                         // if these are the same then they get kept, otherwise they get dropped
+  return arr;                                 // this dedupes the array and then allows us to return the correct answer
 }
 
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
