@@ -1,0 +1,18 @@
+function convertHTML(str) {
+  // &colon;&rpar;
+  var conversion = {
+    '&' : '&amp;',
+    '<' : '&lt;',
+    '>' : '&gt;',
+    '"' : '&quot;',
+    "'" : "&apos;"
+  };  // i'm storing all the various values in an object as it will mean i can reference the replacements directly by character
+  
+  return str.replace(/[<>&'"]/g,function(elem) {return conversion[elem];});
+  // the regular expression in here just applies the replace only when it's one of the characters we are interested in
+  // the callback function literally just takes any values identified by the regular expression and pulls in the correct object value
+  // for the associated object key
+  
+  }
+
+convertHTML("Dolce & Gabbana");
