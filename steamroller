@@ -1,0 +1,8 @@
+
+function steamrollArray(arr) {
+  // I'm a steamroller, baby
+  return arr.filter(function(elem,index,array) {
+    return (Array.isArray(elem) ? elem.toString() : elem);});
+}
+
+steamrollArray([1, [2], [3, [[4]]]]);
