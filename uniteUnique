@@ -1,0 +1,14 @@
+
+function uniteUnique(arr) {
+  var args = Array.from(arguments);
+  var a = [];
+  args.forEach(function(element) {
+   a = a.concat(element);
+  });
+  return a;
+  //  .reduce(function(pre,cur,i){
+  //  if ()
+  //});
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
