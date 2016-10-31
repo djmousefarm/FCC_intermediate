@@ -19,5 +19,4 @@ function spinalCase(str) {
   return parts.join('-');               // create a string from the array of individual words
 }
 
-
 spinalCase('This Is Spinal Tap');
