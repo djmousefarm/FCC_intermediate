@@ -1,8 +1,23 @@
 function spinalCase(str) {
   // "It's such a fine line between stupid, and clever."
   // --David St. Hubbins
-  return str.toLowerCase().replace(/[ ]/g,function() {return '-';});
-  // ([A-Z ])\s\B
+  
+  var parts = [];
+  var temp = '';
+  
+  for (var i = 0;i < str.length; i++) { // loop through all characters in string
+    var s = str.charAt(i);              // create a variable to hold the current character
+    console.log("string " + s);         // just test
+    if (s.search(/[[:alpha:]]+/g)) {    // something to try and identify whether the character is a letter or not
+      temp += s.toLowerCase();          // if it is then append to a temporary variable
+    } else {
+      parts += temp;                    // append the string temp into the array parts
+      temp = '';                        // reset the temporary string
+    }
+      console.log("temp " + temp);
+  }
+  return parts.join('-');               // create a string from the array of individual words
 }
+
 
 spinalCase('This Is Spinal Tap');
