@@ -6,5 +6,4 @@ function dropElements(arr, func) {
 
 //dropElements([1, 2, 3], function(n) {return n < 3; });  This works
 //dropElements([1, 2, 3, 4], function(n) {return n > 5;});  This works!
-dropElements([0, 1, 0, 1], function(n) {return n === 1;})  // This doesn't
-// should return [1,0,1]
+dropElements([0, 1, 0, 1], function(n) {return n === 1;})  // This doesn't should return [1,0,1]
