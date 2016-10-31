@@ -1,0 +1,33 @@
+function sumPrimes(num) {
+  var value = 2;
+  var sumOfValues = 0;
+  function prime(x) {  // this is a function to return a value if it's prime
+  // the commented out code below was when using the supposed more 0(n/2) time complexity version it wasn't working for values below 5
+  
+//    if ((x===2) || (x===3) || (x===5)) {
+//      return x;
+//    } else if ((x===1) || (x===4)) {
+//      return 0;
+//    }
+ //   for(var i = 2; i < Math.floor(x / 2); i ++) {
+ 
+ // without that it's not 0(n/2) - not sure what it is now - but it works
+   for(var i = 2; i < x; i ++) {    
+      if (x % i === 0) {  // if a number is divisible then it's not prime!
+        return 0;         // and we return 0 as the value so it's not counted in the sum
+      }
+    }
+    return x;             // otherwise return the value
+  }
+//  return prime(4);
+var test = '';
+  while (value<=num) {  // loop through all values below the threshold but ignore 1
+    test += prime(value) + ' ';  // this is test code and can be ignored - just checking my functions was working
+    sumOfValues+=prime(value);  // adding all primes together
+    value++;                    // iterating through each value
+  }
+//  return test;
+  return sumOfValues;
+}
+
+sumPrimes(10);
