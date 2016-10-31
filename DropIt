@@ -1,16 +1,12 @@
-// no protect
-// the line above is to allow FCC to run the code because it protects against infinite loops
 function dropElements(arr, func) {
   // Drop them elements.
-  var x = 0;
-  while(!func(arr[x])) {
-    arr.shift();
-    x++;
+  while(!func(arr[0])) {  // checks to see if the function's conditions have not been satisfied
+    arr.shift();          // if they haven't then drop the first value and repeat the check
   }
   return arr;
 }
 
-//dropElements([1, 2, 3], function(n) {return n < 3; });  This works
-//dropElements([1, 2, 3, 4], function(n) {return n > 5;});  This works!
-dropElements([0, 1, 0, 1], function(n) {return n === 1;})  // This doesn't
+//dropElements([1, 2, 3, 4], function(n) {return n < 3; });  //This works
+//dropElements([1, 2, 3, 4], function(n) {return n > 5;});  //This works!
+//dropElements([0, 1, 0, 1], function(n) {return n === 1;});  // This doesn't
 // should return [1,0,1]
