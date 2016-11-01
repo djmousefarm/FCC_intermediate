@@ -1,0 +1,28 @@
+//moz
+function whatIsInAName(collection, source) {
+  // What's in a name?
+  var arr = [];
+  // Only change code below this line
+  var srckeys = Object.keys(source);  // creates an array of all keys in the supplied source object
+  var result;
+  arr = collection.filter(function(element) {  // filters the collection array of objects
+    srckeys.forEach(function(src) {            // iterates through the contents of the srckeys array of source's keys
+        if (element.hasOwnProperty(src) && element[src] === source[src]) {  // checks that the element (current collection object) has a property held in the current src value (key)
+          result = true;                                                    // and checks that it has the same property in that case
+        } else {
+          result = false;            
+        }  // the result variable holds the current bool for whether the element in the collection array passes
+    });
+    return result;  // returns that boolean
+  });
+  
+  // Only change code above this line
+  return arr;
+}
+
+// ugh, i hate this but i really struggled with this and found a lot of the answer here : 
+// http://forum.freecodecamp.com/t/wherefore-art-thou-help-needed/44471/2
+// I did use foreach instead of a for loop, made sense as i was going through an array and it reduces the number of parameters cluttering
+// things up a bit but other than commenting the code, which is not great in itself, i cannot honestly say that i did this all myself.
+
+// Hopefuly i'll learn a bit and can come back and refactor this.
